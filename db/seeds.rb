@@ -37,3 +37,11 @@ Product.create(title: 'Rails Test Prescriptions',
     </p>},
   image_url: 'rtp.jpg',
   price: 43.75)
+
+
+
+user = User.new do |u|
+  u.name = 'user'
+  u.password_digest = BCrypt::Password.create('asdasd')
+end
+user.save

@@ -85,5 +85,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     respond_to do |format|
       format.atom
+    end
   end
 end
