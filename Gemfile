@@ -18,10 +18,8 @@ gem 'jquery-rails', '~> 2.3.0'
 gem 'will_paginate', '~> 3.0'
 gem 'rack', '~> 1.4.5'
 gem 'bcrypt-ruby', '~>3.0.0'
-#group :test do
-	#gem 'turn', :require => false
-#end
 
+gem 'pry'
 
 gem 'therubyracer'
 gem 'execjs'
