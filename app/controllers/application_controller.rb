@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-  before_filter :authorize
+  protect_from_forgery #защита от CRRF  атак
+  before_filter :authorize #выполняет первое дествие перед акшенами
   before_filter :set_i18n_locale_from_params
 
   private
@@ -12,14 +12,12 @@ class ApplicationController < ActionController::Base
     cart
   end
 
-  protected
   def authorize
   	unless User.find_by_id(session[:user_id])
   		redirect_to login_url, notice: "Please log in" 
   	end
   end
 
-  protected
   def set_i18n_locale_from_params
     if params[:locale]
       if I18n.available_locales.include?(params[:locale].to_sym)
